@@ -265,63 +265,123 @@ function ServiceModal({ service, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-md"
         onClick={onClose}
       />
 
-      <div className="relative bg-[#0f1014] max-w-3xl w-full mx-4 rounded-xl border border-white/10 overflow-hidden">
+      {/* Modal */}
+      <div className="relative bg-[#0f1014] max-w-4xl w-full mx-4 rounded-2xl
+                      border border-white/10 overflow-hidden shadow-2xl">
+
+        {/* Header */}
         <div
-          className="flex items-center justify-between p-6 border-b"
+          className="relative p-8 border-b"
           style={{ borderColor: `${service.color}55` }}
         >
-          <div className="flex items-center gap-4">
-            <div
-              className="w-12 h-12 flex items-center justify-center rounded-lg"
-              style={{ background: `${service.color}1a` }}
-            >
-              <Icon className="w-6 h-6" style={{ color: service.color }} />
-            </div>
-            <h3 className="text-2xl font-bold text-white">
-              {service.title}
-            </h3>
-          </div>
+          <div
+            className="absolute inset-0 opacity-10"
+            style={{
+              background: `radial-gradient(circle at top left, ${service.color}, transparent 60%)`
+            }}
+          />
 
-          <button onClick={onClose}>
-            <X className="w-6 h-6 text-white hover:text-red-400" />
-          </button>
+          <div className="relative flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <div
+                className="w-14 h-14 flex items-center justify-center rounded-xl"
+                style={{ background: `${service.color}1a` }}
+              >
+                <Icon className="w-7 h-7" style={{ color: service.color }} />
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-white">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-[#a0a0b0]">
+                  {service.shortDescription}
+                </p>
+              </div>
+            </div>
+
+            <button onClick={onClose}>
+              <X className="w-6 h-6 text-white hover:text-red-400 transition" />
+            </button>
+          </div>
         </div>
 
-        <div className="p-6 max-h-[70vh] overflow-y-auto space-y-8">
-          <section>
-            <h4 className="text-lg font-semibold text-white mb-2">
-              Overview
-            </h4>
-            <p className="text-[#a0a0b0]">
-              {service.fullDetails.overview}
-            </p>
-          </section>
+        {/* Content */}
+        <div className="p-8 max-h-[70vh] overflow-y-auto space-y-10">
 
-          <section>
-            <h4 className="text-lg font-semibold text-white mb-3">
-              Capabilities
-            </h4>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {service.fullDetails.capabilities.map((item, i) => (
-                <li
-                  key={i}
-                  className="bg-[#1a1b26] p-3 rounded-lg text-[#c0c0d0]"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* Overview */}
+          <Section title="Overview">
+            {service.fullDetails.overview}
+          </Section>
+
+          {/* Capabilities */}
+          <GridSection
+            title="Capabilities"
+            items={service.fullDetails.capabilities}
+          />
+
+          {/* Industries */}
+          <GridSection
+            title="Industries"
+            items={service.fullDetails.industries}
+          />
+
+          {/* Technologies */}
+          <GridSection
+            title="Technologies"
+            items={service.fullDetails.technologies}
+          />
+
+          {/* Deliverables */}
+          <GridSection
+            title="Deliverables"
+            items={service.fullDetails.deliverables}
+          />
         </div>
       </div>
     </div>
   );
 }
+
+function Section({ title, children }) {
+  return (
+    <section className="space-y-3">
+      <h4 className="text-lg font-semibold text-white">{title}</h4>
+      <p className="text-[#a0a0b0] leading-relaxed">
+        {children}
+      </p>
+    </section>
+  );
+}
+
+function GridSection({ title, items }) {
+  if (!items?.length) return null;
+
+  return (
+    <section className="space-y-4">
+      <h4 className="text-lg font-semibold text-white">{title}</h4>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {items.map((item) => (
+          <li
+            key={item}
+            className="bg-[#1a1b26] border border-white/5 rounded-xl
+                       px-4 py-3 text-[#c0c0d0]
+                       hover:border-white/15 transition"
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 
 /* =======================
    MAIN SERVICES COMPONENT
