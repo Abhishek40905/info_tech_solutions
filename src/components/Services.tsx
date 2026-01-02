@@ -252,8 +252,128 @@ const services = [
         'Certificates'
       ]
     }
+  },
+
+  /* =======================
+     NEWLY ADDED SERVICES
+  ======================= */
+
+  {
+    id: 'custom-software-development',
+    title: 'Custom Software Development',
+    icon: Globe,
+    color: '#8a2be2',
+    shortDescription:
+      'Custom software solutions for business, industrial, and hardware-integrated systems.',
+    fullDetails: {
+      overview:
+        'We develop tailor-made software solutions that integrate seamlessly with hardware, cloud platforms, and enterprise systems.',
+      capabilities: [
+        'Custom web & enterprise software',
+        'Backend & API development',
+        'Cloud-based systems',
+        'Software-hardware integration',
+        'Automation & workflow systems'
+      ],
+      industries: [
+        'Enterprises',
+        'Startups',
+        'Manufacturing',
+        'IoT & Robotics'
+      ],
+      technologies: [
+        'React / Next.js',
+        'Node.js / Python',
+        'REST APIs',
+        'Cloud platforms'
+      ],
+      deliverables: [
+        'Custom software solution',
+        'Source code',
+        'Documentation',
+        'Deployment & support'
+      ]
+    }
+  },
+
+  {
+    id: 'custom-robot-development',
+    title: 'Custom Robot Development',
+    icon: Bot,
+    color: '#00f0ff',
+    shortDescription:
+      'Design and development of custom robots with intelligent control and mobility.',
+    fullDetails: {
+      overview:
+        'We design and develop advanced robotic systems with custom functionality for industrial, research, and defense applications.',
+      capabilities: [
+        'Custom robot mechanical design',
+        'UMV-type robot development',
+        'Autonomous navigation & control',
+        'Sensor & actuator integration',
+        'Custom functionality robots',
+        'AI-based robotic systems'
+      ],
+      industries: [
+        'Defense & security',
+        'Industrial automation',
+        'Research institutions',
+        'Surveillance & inspection'
+      ],
+      technologies: [
+        'ROS',
+        'Embedded systems',
+        'Computer Vision',
+        'AI & Machine Learning'
+      ],
+      deliverables: [
+        'Fully functional robot system',
+        'Control software & firmware',
+        'Technical documentation',
+        'Testing & deployment support'
+      ]
+    }
+  },
+
+  {
+    id: 'research-and-development',
+    title: 'Research & Development',
+    icon: Layers,
+    color: '#ffd700',
+    shortDescription:
+      'Advanced R&D for innovative robots, IoT devices, and reverse engineering.',
+    fullDetails: {
+      overview:
+        'Our R&D services focus on innovation, experimentation, and advanced engineering to develop next-generation robotic and IoT solutions.',
+      capabilities: [
+        'Product reverse engineering',
+        'Innovative robot development',
+        'Advanced IoT device development',
+        'Technology feasibility analysis',
+        'Prototype-to-product R&D'
+      ],
+      industries: [
+        'Startups',
+        'Research labs',
+        'Defense',
+        'Industrial R&D teams'
+      ],
+      technologies: [
+        'Embedded systems',
+        'Robotics platforms',
+        'IoT architectures',
+        'AI & data analytics'
+      ],
+      deliverables: [
+        'R&D documentation',
+        'Functional prototypes',
+        'Design & analysis reports',
+        'Innovation roadmaps'
+      ]
+    }
   }
 ];
+
 
 /* =======================
    MODAL COMPONENT

@@ -58,7 +58,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-white font-semibold mb-1">Phone</h4>
                   <a href="tel:7800480693" className="text-[#a0a0b0] hover:text-[#00f0ff] transition-colors">
-                    7800-480-693
+                    +91 7800-480-693
                   </a>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Location</h4>
-                  <p className="text-[#a0a0b0]">Noida, UP, India (Tech Hub)</p>
+                  <p className="text-[#a0a0b0]">Kanpur, UP, India </p>
                 </div>
               </div>
             </div>

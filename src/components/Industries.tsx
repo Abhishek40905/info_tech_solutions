@@ -1,9 +1,9 @@
-import { Leaf, Factory, Home, HeartPulse, Package, Building2 } from 'lucide-react';
+import { Leaf, Factory, Home, HeartPulse, Package, Building2,Bot } from 'lucide-react';
 
 const industries = [
   { name: 'Agriculture (Smart Farming)', icon: Leaf, color: '#00f0ff' },
   { name: 'Industrial Automation (IIoT)', icon: Factory, color: '#8a2be2' },
-  { name: 'Smart Homes', icon: Home, color: '#ffd700' },
+  { name: 'aeci robotic industry', icon: Bot, color: '#ffd700' },
   { name: 'Healthcare', icon: HeartPulse, color: '#00f0ff' },
   { name: 'Logistics & Asset Tracking', icon: Package, color: '#8a2be2' },
   { name: 'Smart Cities', icon: Building2, color: '#ffd700' }
